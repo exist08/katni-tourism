@@ -193,6 +193,7 @@ section {
 }
 .content ul li{
   position: relative;
+  font-weight: 700;
 }
 .content ul li a {
   text-decoration: none;
