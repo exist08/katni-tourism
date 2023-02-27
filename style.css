@@ -22,7 +22,7 @@ nav {
   z-index: 10;
   width: 100%;
   height: 10vh;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
   font-size: min(5em, 10vw);
   display: flex;
   justify-content: start;
@@ -49,6 +49,7 @@ nav .logo img {
 nav .logo span {
   width: 80%;
   letter-spacing: 2px;
+  font-weight: bold;
   animation: anim-text 2s ease-in forwards;
 }
 @keyframes anim-logo {
@@ -94,30 +95,6 @@ section {
   background-size: cover;
   background-blend-mode: color-burn;
 }
-.slideshow .slides {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  /* background-color: black; */
-  animation: anim-slides 10s linear infinite alternate;
-}
-.slideshow .slides .slide {
-  flex-shrink: 0;
-  width: 100%;
-  height: 100%;
-  background: #16241b;
-  filter: hue-rotate(calc(var(--i) * 45deg));
-}
-@keyframes anim-slides {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-300%);
-  }
-}
 .slideshow .hero {
   color: aliceblue;
   width: 100%;
@@ -134,9 +111,9 @@ section {
   font-family: "Montserrat", sans-serif;
   width: clamp(70%, 80%, 1100px);
   font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-top: max(-2ch,-3vw);
+  margin-top: max(-2ch, -3vw);
   text-align: center;
-  margin-bottom: max(1ch,10px);
+  margin-bottom: max(1ch, 10px);
   font-weight: 600;
 }
 .slideshow .hero p:last-of-type {
@@ -191,7 +168,7 @@ section {
   list-style: none;
   font-size: max(calc(3vw + 2px), 2em);
 }
-.content ul li{
+.content ul li {
   position: relative;
   font-weight: 700;
 }
@@ -219,9 +196,9 @@ section {
     transform: translateY(0);
   }
 }
-.content ul li::before{
+.content ul li::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 800px;
   height: 450px;
   transform: scale(0.5);
@@ -231,7 +208,7 @@ section {
   transition: 1s;
   background-size: cover;
 }
-.content ul li:has(a:hover)::before{
+.content ul li:has(a:hover)::before {
   width: 800px;
   height: 450px;
   background: lightcoral;
@@ -240,31 +217,107 @@ section {
   left: 42vw;
   transition: 1s;
 }
-.content ul li#tharka::before{
+.content ul li#tharka::before {
   background: url(./tharka/tharka_main.jpg);
   background-size: cover;
 }
-.content ul li#pathwari::before{
+.content ul li#pathwari::before {
   background: url(./imgs/road2.jpg);
   background-size: cover;
 }
-.content ul li#kudiya::before{
+.content ul li#kudiya::before {
   background: url(./kudiyaghat/kudiyaghat_main.jpg);
   background-size: cover;
 }
-.content ul li#parsel::before{
+.content ul li#parsel::before {
   background: url(./parsel/parsel_main.jpg);
   background-size: cover;
 }
 
-section#kudiya-ghat{ 
-  background: lightblue;
+section#kudiya-ghat {
+  background: rgba(0, 0, 0, 0.5);
   padding: 10vh 4vw;
+  position: relative;
+  color: #ffffff60;
+  text-shadow: 1px 1px rgba(0,0,0,.5);
 }
-section#kudiya-ghat h1{
+section#kudiya-ghat h1 {
   font-size: max(calc(4vw + 10px), 2.5em);
 }
-section#kudiya-ghat p{
+section#kudiya-ghat p {
+  font-size: max(calc(1vw + 10px), 1em);
   font-weight: 400;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+section#kudiya-ghat button {
+  font-weight: 700;
+  font-family: inherit;
+  /* font-size: min(20px, 6vw); */
+  font-size: 150%;
+  text-transform: uppercase;
+  width: min(100%, 400px);
+  height: 50px;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1),
+              0 0 10px rgba(0, 0, 0, 0.2) inset;
+  margin-top: 4ch;
+  color: #ffffff60;
+  background: rgba(0, 0, 0, 0.3);
+}
+section#kudiya-ghat .slides {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  /* background-color: black; */
+}
+section#kudiya-ghat .slides .slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  background: #16241b;
+}
+@keyframes anim-slides {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+@keyframes anim-slides-mobile {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-500%);
+  }
+}
+section#kudiya-ghat .slides .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  section#kudiya-ghat .slides.lg-block {
+    display: none;
+  }
+  section#kudiya-ghat .slides.lg-hidden {
+    animation: anim-slides-mobile 20s linear infinite alternate;
+  }
+}
+@media screen and (min-width: 768px) {
+  section#kudiya-ghat .slides.lg-hidden {
+    display: none;
+  }
+  section#kudiya-ghat .slides.lg-block {
+    animation: anim-slides 20s linear infinite alternate;
+  }
 }
