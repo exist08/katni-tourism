@@ -63,13 +63,11 @@ nav .logo span {
 
 main {
   /* scroll-snap-type: y mandatory; */
-  overflow-y: scroll;
-  height: 100vh;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 ::selection {
-  background: #5eff2c;
+  background: #ff9933;
   color: #020406;
 }
 ::-webkit-scrollbar {
@@ -77,9 +75,8 @@ main {
   background: #020406;
 }
 ::-webkit-scrollbar-thumb {
-  background: #5eff2c;
-  background: linear-gradient(45deg, red, blue);
-  box-shadow: 0 -100vh 0 0vh #5eff2c;
+  background: #ff9933;
+  box-shadow: 0 -100vh 0 100vh #ff9933, 0 0 55px 10px #ff9933;
 }
 section {
   /* scroll-snap-align: start; */
