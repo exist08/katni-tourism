@@ -17,7 +17,7 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 10;
   width: 100%;
