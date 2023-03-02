@@ -13,6 +13,6 @@ enterView({
 })
 
 let loader = document.getElementById('loader')
-document.addEventListener('load', ()=>{
+window.addEventListener('load', ()=>{
     loader.style.display = 'none'
 })
