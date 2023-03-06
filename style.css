@@ -98,7 +98,7 @@ section {
   justify-content: start;
   align-items: center;
   background-color: black;
-  background-image: url(./imgs/road1.jpg);
+  /* background-image: url(./imgs/road1.jpg); */
   background-size: cover;
   background-blend-mode: color-burn;
 }
@@ -224,6 +224,7 @@ section {
   left: 42vw;
   transition: 1s;
 }
+
 .content ul li#tharka::before {
   background: url(./tharka/tharka_main.jpg);
   background-size: cover;
@@ -239,6 +240,11 @@ section {
 .content ul li#parsel::before {
   background: url(./parsel/parsel_main.jpg);
   background-size: cover;
+}
+@media screen and (max-width: 768px){
+  .content ul li::before {
+    display: none;
+  }
 }
 
 section#kudiya-ghat {
@@ -314,6 +320,9 @@ section#kudiya-ghat .slides .slide img {
   object-fit: cover;
 }
 @media screen and (max-width: 768px) {
+  .lg-block {
+    display: none;
+  }
   section#kudiya-ghat .slides.lg-block {
     display: none;
   }
@@ -322,6 +331,9 @@ section#kudiya-ghat .slides .slide img {
   }
 }
 @media screen and (min-width: 768px) {
+  .lg-hidden {
+    display: none;
+  }
   section#kudiya-ghat .slides.lg-hidden {
     display: none;
   }
